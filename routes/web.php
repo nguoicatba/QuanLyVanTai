@@ -25,6 +25,8 @@ Route::prefix('danhmuc')->group(function () {
 
     Route::prefix('shipper')->controller(ShipperController::class)->group(function () {
         Route::get('/', 'index')->name('shipper.index');
+        Route::get('/create','create')->name('shipper.create');
+        Route::post('/store', 'store')->name('shipper.store');
     });
 
 });

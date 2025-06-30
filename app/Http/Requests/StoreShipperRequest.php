@@ -11,7 +11,7 @@ class StoreShipperRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,19 @@ class StoreShipperRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'shipper_code' => ['required', 'string', 'max:20'],
+            'shipper_name' => ['required', 'string', 'max:50'],
+            'address' => ['nullable', 'string', 'max:100'],
+            'phone' => ['nullable', 'string', 'max:20'],
+            'fax' => ['nullable', 'string', 'max:20'],
+            'tax_code' => ['nullable', 'string', 'max:50'],
+            'storage_fee' => ['nullable', 'numeric'],
+            'bank_account' => ['nullable', 'string', 'max:30'],
+            'bank_name' => ['nullable', 'string', 'max:50'],
+            'bank_address' => ['nullable', 'string', 'max:100'],
+            'id_number' => ['nullable', 'string', 'max:20'],
+            'tax_percent' => ['nullable', 'integer'],
+            'debt_balance' => ['nullable', 'numeric'],
         ];
     }
 }

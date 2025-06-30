@@ -6,6 +6,11 @@
             <div class="card-title">Shipper</div>
             <div class="text-sm">About shipper</div>
         </div>
+        <div class="card-actions mt-2 mb-2">
+            <a href="{{ route('shipper.create') }}" class="btn btn-primary">
+                <i class="fa fa-plus"></i> Create Shipper
+            </a>
+        </div>
         <div class="card-body">
             <table class="table table-striped" id="datatable1">
                 <thead>
