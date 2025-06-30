@@ -5,20 +5,38 @@ namespace App\Http\Controllers;
 use App\Models\Shipper;
 use App\Http\Requests\StoreShipperRequest;
 use App\Http\Requests\UpdateShipperRequest;
+use Illuminate\Http\Request;
 
 class ShipperController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $shippers = Shipper::all();
+        $query = Shipper::query();
+
+        if ($request->filled('search_code')) {
+            $query->where('shipper_code', 'like', '%' . $request->search_code . '%');
+        }
+
+        if ($request->filled('search_name')) {
+            $query->where('shipper_name', 'like', '%' . $request->search_name . '%');
+        }
+
+        if ($request->filled('search_phone')) {
+            $query->where('phone', 'like', '%' . $request->search_phone . '%');
+        }
+
+        if ($request->filled('search_tax_code')) {
+            $query->where('tax_code', 'like', '%' . $request->search_tax_code . '%');
+        }
+
+        $shippers = $query->get();
 
         return view('shipper.index', [
             'table' => $shippers
         ]);
-        //
     }
 
     /**

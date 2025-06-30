@@ -30,7 +30,7 @@
 </head>
 
 <body class="layout-h">
-    <div class="wrapper">
+    <div class="fluid">
         <!-- top navbar-->
         <header class="topnavbar-wrapper">
             <!-- START Top Navbar-->
@@ -56,11 +56,11 @@
                     <ul class="nav navbar-nav mr-auto flex-column flex-lg-row">
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-toggle-nocaret"
                                 href="#dashboard" data-toggle="dropdown">Dashboard</a>
-                            <div class="dropdown-menu animated fadeIn"><a class="dropdown-item"
+                            <!-- <div class="dropdown-menu animated fadeIn"><a class="dropdown-item"
                                     href="dashboard.html">Dashboard v1</a><a class="dropdown-item"
                                     href="dashboard_v2.html">Dashboard v2</a><a class="dropdown-item"
                                     href="dashboard_v3.html">Dashboard v3</a>
-                            </div>
+                            </div> -->
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-toggle-nocaret"
                                 href="#dashboard" data-toggle="dropdown">Danh mục</a>
