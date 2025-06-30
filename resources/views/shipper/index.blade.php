@@ -6,16 +6,23 @@
             <div class="card-title">Shipper</div>
             <div class="text-sm">About shipper</div>
         </div>
-        <div class="card-actions mt-2 mb-2">
-            <a href="{{ route('shipper.create') }}" class="btn btn-primary">
-                <i class="fa fa-plus"></i> Create Shipper
-            </a>
-        </div>
+
+
+
         <div class="card-body">
-            <table class="table table-striped" id="datatable1">
+            <p>
+                <a href="{{ route('shipper.create') }}" class="btn btn-labeled btn-primary btn-xs">
+                    <span class="btn-label">
+                        <i class="fa fa-plus-circle"></i>
+                    </span>
+                    New Shipper
+                </a>
+             
+            </p>
+            <table class="table nowrap border display" id="mytable" style="width:100%">
                 <thead>
                     <tr>
-                        <th>{{ __("shipper.shipper_code") }}</th>
+                        <th>{{ __('shipper.shipper_code') }}</th>
                         <th>{{ __("shipper.shipper_name") }}</th>
                         <th>{{ __("shipper.address") }}</th>
                         <th>{{ __("shipper.phone") }}</th>

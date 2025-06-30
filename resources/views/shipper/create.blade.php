@@ -8,10 +8,10 @@
         <div class="card-body">
             <form action="{{ route('shipper.store') }}" method="POST">
                 @csrf
-                <div class="form-group">
-                    <label for="shipper_code">{{ __('shipper.shipper_code') }}</label>
-                    <input type="text" class="form-control" id="shipper_code" name="shipper_code" required>
-                </div>
+                <!-- <div class="form-group">
+                            <label for="shipper_code">{{ __('shipper.shipper_code') }}</label>
+                            <input type="text" class="form-control" id="shipper_code" name="shipper_code" required>
+                        </div> -->
                 <div class="form-group">
                     <label for="shipper_name">{{ __('shipper.shipper_name') }}</label>
                     <input type="text" class="form-control" id="shipper_name" name="shipper_name" required>
@@ -60,9 +60,9 @@
                     <label for="debt_balance">{{ __('shipper.debt_balance') }}</label>
                     <input type="number" step="0.01" class="form-control" id="debt_balance" name="debt_balance">
                 </div>
-                <button type="submit" class="btn btn-success">{{ __('Save') }}</button>
-                <a href="{{ route('shipper.index') }}" class="btn btn-secondary">{{ __('Cancel') }}</a>
+                <button type="submit" class="btn btn-success">Save</button>
+                <a href="{{ route('shipper.index') }}" class="btn btn-secondary">Cancel</a>
             </form>
         </div>
     </div>
-@endsection 
+@endsection

@@ -83,12 +83,59 @@
                             </a>
                         </li>
                         <!-- END lock screen-->
+                        <li class="nav-item dropdown dropdown-list">
+                            <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" data-toggle="dropdown">
+                                <em class="fa fa-language"></em>
+
+                            </a>
+                            <!-- START Dropdown menu-->
+                            <div class="dropdown-menu dropdown-menu-right">
+                                <div class="dropdown-item">
+                                    <!-- START list group-->
+                                    <div class="list-group">
+                                        <!-- list item-->
+                                        <div class="list-group-item list-group-item-action">
+                                            <a href="{{ route('lang.switch', 'en') }}">
+                                                <div class="media">
+                                                    <div class="align-self-start mr-2">
+                                                        <em class="fa fa-user text-primary"></em>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="m-0">English</p>
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- list item-->
+                                        <div class="list-group-item list-group-item-action">
+                                            <a href="{{ route('lang.switch', 'vi') }}">
+                                                <div class="media">
+                                                    <div class="align-self-start mr-2">
+                                                        <em class="fa fa-lock text-success"></em>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p class="m-0">Vietnamese</p>
+
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <!-- last list item-->
+                                        <!-- END list group-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- END Dropdown menu-->
+                        </li>
                         <!-- Search icon-->
                         <li class="nav-item">
                             <a class="nav-link" href="#" data-search-open="">
                                 <em class="icon-magnifier"></em>
                             </a>
                         </li>
+
                         <!-- Fullscreen (only desktops)-->
                         <li class="nav-item d-none d-md-block">
                             <a class="nav-link" href="#" data-toggle-fullscreen="">

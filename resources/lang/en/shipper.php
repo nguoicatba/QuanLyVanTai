@@ -14,4 +14,4 @@ return [
     'id_number' => 'ID Number',
     'tax_percent' => 'Tax Percent',
     'debt_balance' => 'Debt Balance',
-]; 
+];

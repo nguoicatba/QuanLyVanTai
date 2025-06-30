@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Str;
 
 class StoreShipperRequest extends FormRequest
 {
@@ -36,5 +37,15 @@ class StoreShipperRequest extends FormRequest
             'tax_percent' => ['nullable', 'integer'],
             'debt_balance' => ['nullable', 'numeric'],
         ];
+    }
+
+    /**
+     * Prepare the data for validation.
+     */
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'shipper_code' => 'SH' . strtoupper(Str::random(8)),
+        ]);
     }
 }
