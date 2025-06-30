@@ -10,9 +10,11 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('TypeGoods', function (Blueprint $table) {
-            $table->string('TypeGoodCode');
-            $table->string('TypeGoodName');
+        Schema::create('hang_van_tais', function (Blueprint $table) {
+            $table->string('MaHangVanTai', 20)->primary();
+            $table->string('TenHangVanTai', 40);
+            $table->string('DiaChi', 100)->nullable();
+            $table->decimal('NoCu', 19, 4)->nullable();
             $table->timestamps();
         });
     }
@@ -22,6 +24,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('TypeGood');
+        Schema::dropIfExists('hang_van_tais');
     }
 };

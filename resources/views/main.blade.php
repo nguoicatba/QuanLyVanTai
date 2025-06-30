@@ -9,20 +9,24 @@
     <title>Angle - Bootstrap Admin Template</title>
     <!-- =============== VENDOR STYLES ===============-->
     <!-- FONT AWESOME-->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href={{ asset("vendor/font-awesome/css/font-awesome.css") }}>
     <!-- SIMPLE LINE ICONS-->
-    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
+    <link rel="stylesheet" href={{ asset("vendor/simple-line-icons/css/simple-line-icons.css") }}>
     <!-- ANIMATE.CSS-->
-    <link rel="stylesheet" href="vendor/animate.css/animate.css">
+    <link rel="stylesheet" href={{ asset("vendor/animate.css/animate.css") }}>
     <!-- WHIRL (spinners)-->
-    <link rel="stylesheet" href="vendor/whirl/dist/whirl.css">
+    <link rel="stylesheet" href={{ asset("vendor/whirl/dist/whirl.css") }}>
     <!-- =============== PAGE VENDOR STYLES ===============-->
+    <!-- Datatables-->
+    <link rel="stylesheet" href={{ asset("vendor/datatables.net-bs4/css/dataTables.bootstrap4.css") }}>
+    <link rel="stylesheet" href={{ asset("vendor/datatables.net-keytable-bs/css/keyTable.bootstrap.css") }}>
+    <link rel="stylesheet" href={{ asset("vendor/datatables.net-responsive-bs/css/responsive.bootstrap.css") }}>
     <!-- WEATHER ICONS-->
-    <link rel="stylesheet" href="vendor/weather-icons/css/weather-icons.css">
+    <link rel="stylesheet" href={{ asset("vendor/weather-icons/css/weather-icons.css") }}>
     <!-- =============== BOOTSTRAP STYLES ===============-->
-    <link rel="stylesheet" href="css/bootstrap.css" id="bscss">
+    <link rel="stylesheet" href={{ asset("css/bootstrap.css") }} id="bscss">
     <!-- =============== APP STYLES ===============-->
-    <link rel="stylesheet" href="css/app.css" id="maincss">
+    <link rel="stylesheet" href={{ asset("css/app.css") }} id="maincss">
 </head>
 
 <body class="layout-h">
@@ -35,10 +39,10 @@
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#/">
                         <div class="brand-logo">
-                            <img class="img-fluid" src="img/logo.png" alt="App Logo">
+                            <img class="img-fluid" src={{ asset("img/logo.png") }} alt="App Logo">
                         </div>
                         <div class="brand-logo-collapsed">
-                            <img class="img-fluid" src="img/logo-single.png" alt="App Logo">
+                            <img class="img-fluid" src={{ asset("img/logo-single.png")}} alt="App Logo">
                         </div>
                     </a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topnavbar">
@@ -56,6 +60,14 @@
                                     href="dashboard.html">Dashboard v1</a><a class="dropdown-item"
                                     href="dashboard_v2.html">Dashboard v2</a><a class="dropdown-item"
                                     href="dashboard_v3.html">Dashboard v3</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-toggle-nocaret"
+                                href="#dashboard" data-toggle="dropdown">Danh mục</a>
+                            <div class="dropdown-menu animated fadeIn">
+                                <a class="dropdown-item" href={{ route('carrier.index') }}>Hãng vận tải</a>
+                                <a class="dropdown-item" href={{ route('shipper.index') }}>Shipper</a>
+                                <a class="dropdown-item" href="dashboard_v3.html">Dashboard v3</a>
                             </div>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="widgets.html">Widgets</a>
@@ -531,48 +543,64 @@
         <!-- Main section-->
         <section class="section-container">
             <!-- Page content-->
-            @yield('content')
+            <div class="content-wrapper">
+                <!-- Page content-->
+                @yield('content')
+            </div>
         </section>
+
         <!-- Page footer-->
-        <footer>
+        <!-- <footer>
             <span>&copy; 2018 - Angle</span>
-        </footer>
+        </footer> -->
     </div>
     <!-- =============== VENDOR SCRIPTS ===============-->
     <!-- MODERNIZR-->
-    <script src="vendor/modernizr/modernizr.custom.js"></script>
+    <script src="{{ asset('vendor/modernizr/modernizr.custom.js') }}"></script>
     <!-- JQUERY-->
-    <script src="vendor/jquery/dist/jquery.js"></script>
+    <script src="{{ asset('vendor/jquery/dist/jquery.js') }}"></script>
     <!-- BOOTSTRAP-->
-    <script src="vendor/popper.js/dist/umd/popper.js"></script>
-    <script src="vendor/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="{{ asset('vendor/popper.js/dist/umd/popper.js') }}"></script>
+    <script src="{{ asset('vendor/bootstrap/dist/js/bootstrap.js') }}"></script>
     <!-- STORAGE API-->
-    <script src="vendor/js-storage/js.storage.js"></script>
+    <script src="{{ asset('vendor/js-storage/js.storage.js') }}"></script>
     <!-- JQUERY EASING-->
-    <script src="vendor/jquery.easing/jquery.easing.js"></script>
+    <script src="{{ asset('vendor/jquery.easing/jquery.easing.js') }}"></script>
     <!-- ANIMO-->
-    <script src="vendor/animo/animo.js"></script>
+    <script src="{{ asset('vendor/animo/animo.js') }}"></script>
     <!-- SCREENFULL-->
-    <script src="vendor/screenfull/dist/screenfull.js"></script>
+    <script src="{{ asset('vendor/screenfull/dist/screenfull.js') }}"></script>
     <!-- LOCALIZE-->
-    <script src="vendor/jquery-localize/dist/jquery.localize.js"></script>
+    <script src="{{ asset('vendor/jquery-localize/dist/jquery.localize.js') }}"></script>
     <!-- =============== PAGE VENDOR SCRIPTS ===============-->
+    <!-- Datatables-->
+    <script src="{{ asset('vendor/datatables.net/js/jquery.dataTables.js') }}"></script>
+    <script src={{ asset("vendor/datatables.net-bs4/js/dataTables.bootstrap4.js") }}></script>
+    <script src={{ asset("vendor/datatables.net-buttons/js/dataTables.buttons.js") }}></script>
+    <script src={{ asset("vendor/datatables.net-buttons-bs/js/buttons.bootstrap.js") }}></script>
+    <script src={{ asset("vendor/datatables.net-buttons/js/buttons.colVis.js") }}></script>
+    <script src={{ asset("vendor/datatables.net-buttons/js/buttons.flash.js") }}></script>
+    <script src={{ asset("vendor/datatables.net-buttons/js/buttons.html5.js") }}></script>
+    <script src={{ asset("vendor/datatables.net-buttons/js/buttons.print.js") }}></script>
+    <script src={{ asset("vendor/datatables.net-keytable/js/dataTables.keyTable.js") }}></script>
+    <script src={{ asset("vendor/datatables.net-responsive/js/dataTables.responsive.js") }}></script>
+    <script src={{ asset("vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js") }}></script>
     <!-- SPARKLINE-->
-    <script src="vendor/jquery-sparkline/jquery.sparkline.js"></script>
+    <script src="{{ asset('vendor/jquery-sparkline/jquery.sparkline.js') }}"></script>
     <!-- FLOT CHART-->
-    <script src="vendor/flot/jquery.flot.js"></script>
-    <script src="vendor/jquery.flot.tooltip/js/jquery.flot.tooltip.js"></script>
-    <script src="vendor/flot/jquery.flot.resize.js"></script>
-    <script src="vendor/flot/jquery.flot.pie.js"></script>
-    <script src="vendor/flot/jquery.flot.time.js"></script>
-    <script src="vendor/flot/jquery.flot.categories.js"></script>
-    <script src="vendor/jquery.flot.spline/jquery.flot.spline.js"></script>
+    <script src="{{ asset('vendor/flot/jquery.flot.js') }}"></script>
+    <script src="{{ asset('vendor/jquery.flot.tooltip/js/jquery.flot.tooltip.js') }}"></script>
+    <script src="{{ asset('vendor/flot/jquery.flot.resize.js') }}"></script>
+    <script src="{{ asset('vendor/flot/jquery.flot.pie.js') }}"></script>
+    <script src="{{ asset('vendor/flot/jquery.flot.time.js') }}"></script>
+    <script src="{{ asset('vendor/flot/jquery.flot.categories.js') }}"></script>
+    <script src="{{ asset('vendor/jquery.flot.spline/jquery.flot.spline.js') }}"></script>
     <!-- EASY PIE CHART-->
-    <script src="vendor/easy-pie-chart/dist/jquery.easypiechart.js"></script>
+    <script src="{{ asset('vendor/easy-pie-chart/dist/jquery.easypiechart.js') }}"></script>
     <!-- MOMENT JS-->
-    <script src="vendor/moment/min/moment-with-locales.js"></script>
+    <script src="{{ asset('vendor/moment/min/moment-with-locales.js') }}"></script>
     <!-- =============== APP SCRIPTS ===============-->
-    <script src="js/app.js"></script>
+    <script src="{{ asset('js/app.js') }}"></script>
 
 
 </body>
