@@ -31,6 +31,9 @@ Route::prefix('danhmuc')->group(function () {
         Route::get('/', 'index')->name('shipper.index');
         Route::get('/create', 'create')->name('shipper.create');
         Route::post('/store', 'store')->name('shipper.store');
+        Route::get('/edit/{shipper}','edit')->name('shipper.edit');
+        Route::put('/update/{shipper}','update')->name('shipper.update');
+        Route::delete('/delete/{shipper}','destroy')->name('shipper.destroy');
     });
 
 });

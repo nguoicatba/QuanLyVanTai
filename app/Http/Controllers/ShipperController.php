@@ -53,15 +53,17 @@ class ShipperController extends Controller
      */
     public function edit(Shipper $shipper)
     {
-        //
+        return view('shipper.edit', compact('shipper'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateShipperRequest $request, Shipper $shipper)
+    public function update(StoreShipperRequest $request, Shipper $shipper)
     {
-        //
+        $data = $request->validated();
+        $shipper->update($data);
+        return redirect()->route('shipper.index')->with('success', __('Shipper updated successfully.'));
     }
 
     /**
@@ -69,6 +71,7 @@ class ShipperController extends Controller
      */
     public function destroy(Shipper $shipper)
     {
-        //
+        $shipper->delete();
+        return redirect()->route('shipper.index')->with('success', __('Shipper deleted successfully.'));
     }
 }
