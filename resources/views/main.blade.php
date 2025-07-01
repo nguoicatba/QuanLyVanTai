@@ -67,6 +67,9 @@
                             <div class="dropdown-menu animated fadeIn">
                                 <a class="dropdown-item" href={{ route('carrier.index') }}>Hãng vận tải</a>
                                 <a class="dropdown-item" href={{ route('shipper.index') }}>Shipper</a>
+                                <a class="dropdown-item" href={{ route('employee.index') }}>Employee</a>
+                                <a class="dropdown-item" href={{ route('position.index') }}>Position</a>
+
                                 <a class="dropdown-item" href="dashboard_v3.html">Dashboard v3</a>
                             </div>
                         </li>

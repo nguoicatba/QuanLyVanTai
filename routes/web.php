@@ -3,6 +3,8 @@
 use App\Http\Controllers\HangVanTaiController;
 use App\Http\Controllers\ShipperController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\EmployeeController;
+use App\Http\Controllers\PositionController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -37,6 +39,24 @@ Route::prefix('danhmuc')->group(function () {
         Route::get('/edit/{shipper}', 'edit')->name('shipper.edit');
         Route::put('/update/{shipper}', 'update')->name('shipper.update');
         Route::delete('/delete/{shipper}', 'destroy')->name('shipper.destroy');
+    });
+
+    Route::prefix('employee')->controller(EmployeeController::class)->group(function () {
+        Route::get('/', 'index')->name('employee.index');
+        Route::get('/create', 'create')->name('employee.create');
+        Route::post('/store', 'store')->name('employee.store');
+        Route::get('/edit/{employee}', 'edit')->name('employee.edit');
+        Route::put('/update/{employee}', 'update')->name('employee.update');
+        Route::delete('/delete/{employee}', 'destroy')->name('employee.destroy');
+    });
+
+    Route::prefix('position')->controller(PositionController::class)->group(function () {
+        Route::get('/', 'index')->name('position.index');
+        Route::get('/create', 'create')->name('position.create');
+        Route::post('/store', 'store')->name('position.store');
+        Route::get('/edit/{position}', 'edit')->name('position.edit');
+        Route::put('/update/{position}', 'update')->name('position.update');
+        Route::delete('/delete/{position}', 'destroy')->name('position.destroy');
     });
 
 });
