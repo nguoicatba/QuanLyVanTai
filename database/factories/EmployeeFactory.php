@@ -22,7 +22,7 @@ class EmployeeFactory extends Factory
             'birth_date' => $this->faker->date(),
             'citizen_id' => $this->faker->numerify('###############'),
             'address' => $this->faker->address(),
-            'phone_number' => $this->faker->phoneNumber(),
+            'phone_number' => substr($this->faker->phoneNumber(), 0, 30),
             'employee_type' => $this->faker->randomElement(['Permanent', 'Contract']),
             'department' => $this->faker->randomElement(['HR', 'Sales', 'Tech']),
             'basic_salary' => $this->faker->randomFloat(2, 500, 5000),

@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             HangVanTaiSeeder::class,
             ShipperSeeder::class,
             PositionSeeder::class,
+            EmployeeSeeder::class,
         ]);
     }
 }

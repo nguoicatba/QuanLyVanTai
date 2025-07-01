@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->string('employee_name', 40); // TenNhanVien
             $table->date('birth_date')->nullable(); // NgaySinh
             $table->string('citizen_id', 15)->nullable(); // CCCD
-            $table->string('address', 40)->nullable(); // DiaChi
+            $table->string('address', 200)->nullable(); // DiaChi
             $table->string('phone_number', 15)->nullable(); // SDT
             $table->string('employee_type', 40)->nullable(); // LoaiNhanVien
             $table->string('department', 40)->nullable(); // PhongBan
