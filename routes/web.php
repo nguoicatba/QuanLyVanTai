@@ -57,6 +57,8 @@ Route::prefix('danhmuc')->group(function () {
         Route::get('/edit/{position}', 'edit')->name('position.edit');
         Route::put('/update/{position}', 'update')->name('position.update');
         Route::delete('/delete/{position}', 'destroy')->name('position.destroy');
+
+
     });
 
 });

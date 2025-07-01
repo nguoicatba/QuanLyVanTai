@@ -655,7 +655,7 @@
     <script src="{{ asset('vendor/moment/min/moment-with-locales.js') }}"></script>
     <!-- =============== APP SCRIPTS ===============-->
     <script src="{{ asset('js/app.js') }}"></script>
-
+    @yield('scripts')
 
 </body>
 
