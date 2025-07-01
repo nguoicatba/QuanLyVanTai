@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             HangVanTaiSeeder::class,
             ShipperSeeder::class,
+            PositionSeeder::class,
         ]);
     }
 }
