@@ -14,6 +14,10 @@ class PositionController extends Controller
     public function index()
     {
         //
+        $position = Position::all();
+        return view('position.index', [
+            'table' => $position
+        ]);
     }
 
     /**
