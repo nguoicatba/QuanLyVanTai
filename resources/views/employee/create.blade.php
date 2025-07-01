@@ -8,10 +8,7 @@
         <div class="card-body">
             <form action="{{ route('employee.store') }}" method="POST">
                 @csrf
-                <!-- <div class="form-group">
-                        <label for="employee_id">{{ __('employee.employee_id') }}</label>
-                        <input type="text" class="form-control" id="employee_id" name="employee_id" required>
-                    </div> -->
+
                 <div class="form-group">
                     <label for="employee_name">{{ __('employee.employee_name') }}</label>
                     <input type="text" class="form-control" id="employee_name" name="employee_name" required>

@@ -34,7 +34,15 @@ class EmployeeController extends Controller
      */
     public function store(StoreEmployeeRequest $request)
     {
-        //
+        $data = $request->only([
+            'employee_name',
+            'position_id',
+            'phone',
+            'address',
+            'email',
+        ]);
+        Employee::create($data);
+        return redirect()->route('employee.index')->with('success', __('Employee created successfully.'));
     }
 
     /**

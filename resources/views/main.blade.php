@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="description" content="Bootstrap Admin App + jQuery">
     <meta name="keywords" content="app, responsive, jquery, bootstrap, dashboard, admin">
-    <title>Angle - Bootstrap Admin Template</title>
+    <title>Quản lý vận tải</title>
     <!-- =============== VENDOR STYLES ===============-->
     <!-- FONT AWESOME-->
     <link rel="stylesheet" href={{ asset("vendor/font-awesome/css/font-awesome.css") }}>
@@ -21,6 +21,8 @@
     <link rel="stylesheet" href={{ asset("vendor/datatables.net-bs4/css/dataTables.bootstrap4.css") }}>
     <link rel="stylesheet" href={{ asset("vendor/datatables.net-keytable-bs/css/keyTable.bootstrap.css") }}>
     <link rel="stylesheet" href={{ asset("vendor/datatables.net-responsive-bs/css/responsive.bootstrap.css") }}>
+    <!-- SELECT2-->
+    <link rel="stylesheet" href={{asset("vendor/select2/dist/css/select2.css")}} />
     <!-- WEATHER ICONS-->
     <link rel="stylesheet" href={{ asset("vendor/weather-icons/css/weather-icons.css") }}>
     <!-- =============== BOOTSTRAP STYLES ===============-->
@@ -624,7 +626,7 @@
     <script src="{{ asset('vendor/jquery-localize/dist/jquery.localize.js') }}"></script>
     <!-- =============== PAGE VENDOR SCRIPTS ===============-->
     <!-- Datatables-->
-    <script src="{{ asset('vendor/datatables.net/js/jquery.dataTables.js') }}"></script>
+    <script src={{ asset('vendor/datatables.net/js/jquery.dataTables.js') }}></script>
     <script src={{ asset("vendor/datatables.net-bs4/js/dataTables.bootstrap4.js") }}></script>
     <script src={{ asset("vendor/datatables.net-buttons/js/dataTables.buttons.js") }}></script>
     <script src={{ asset("vendor/datatables.net-buttons-bs/js/buttons.bootstrap.js") }}></script>
@@ -635,6 +637,8 @@
     <script src={{ asset("vendor/datatables.net-keytable/js/dataTables.keyTable.js") }}></script>
     <script src={{ asset("vendor/datatables.net-responsive/js/dataTables.responsive.js") }}></script>
     <script src={{ asset("vendor/datatables.net-responsive-bs/js/responsive.bootstrap.js") }}></script>
+    <!-- SELECT2-->
+    <script src={{ asset("vendor/select2/dist/js/select2.full.js")}}></script>
     <!-- SPARKLINE-->
     <script src="{{ asset('vendor/jquery-sparkline/jquery.sparkline.js') }}"></script>
     <!-- FLOT CHART-->

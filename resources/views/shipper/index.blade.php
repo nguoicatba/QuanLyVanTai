@@ -9,40 +9,40 @@
             <form action="{{ route('shipper.index') }}" method="GET" id="searchForm">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="search_code">{{ __('shipper.shipper_code') }}</label>
-                            <input type="text" class="form-control" id="search_code" name="search_code"
+                        <div class="form-group mb-1">
+                            <label for="search_code" class="form-label form-label-sm mb-1">{{ __('shipper.shipper_code') }}</label>
+                            <input type="text" class="form-control form-control-sm p-1" id="search_code" name="search_code"
                                 value="{{ request('search_code') }}">
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="search_name">{{ __('shipper.shipper_name') }}</label>
-                            <input type="text" class="form-control" id="search_name" name="search_name"
+                        <div class="form-group mb-1">
+                            <label for="search_name" class="form-label form-label-sm mb-1">{{ __('shipper.shipper_name') }}</label>
+                            <input type="text" class="form-control form-control-sm p-1" id="search_name" name="search_name"
                                 value="{{ request('search_name') }}">
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="search_phone">{{ __('shipper.phone') }}</label>
-                            <input type="text" class="form-control" id="search_phone" name="search_phone"
+                        <div class="form-group mb-1">
+                            <label for="search_phone" class="form-label form-label-sm mb-1">{{ __('shipper.phone') }}</label>
+                            <input type="text" class="form-control form-control-sm p-1" id="search_phone" name="search_phone"
                                 value="{{ request('search_phone') }}">
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="form-group">
-                            <label for="search_tax_code">{{ __('shipper.tax_code') }}</label>
-                            <input type="text" class="form-control" id="search_tax_code" name="search_tax_code"
+                        <div class="form-group mb-1">
+                            <label for="search_tax_code" class="form-label form-label-sm mb-1">{{ __('shipper.tax_code') }}</label>
+                            <input type="text" class="form-control form-control-sm p-1" id="search_tax_code" name="search_tax_code"
                                 value="{{ request('search_tax_code') }}">
                         </div>
                     </div>
                 </div>
-                <div class="row mt-2">
+                <div class="row mt-1">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary btn-sm m-1">
                             <i class="fa fa-search"></i> Search
                         </button>
-                        <button type="button" class="btn btn-secondary" onclick="clearSearch()">
+                        <button type="button" class="btn btn-secondary btn-sm m-1" onclick="clearSearch()">
                             <i class="fa fa-times"></i> Clear
                         </button>
                     </div>
