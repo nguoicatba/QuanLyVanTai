@@ -8,31 +8,31 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="search_code">{{ __('position.position_id') }}</label>
-                            <input type="text" class="form-control" id="search_code" name="search_code"
+                            <input type="text" class="form-control form-control-xs" id="search_code" name="search_code"
                                 value="{{ request('search_code') }}">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="search_name">{{ __('position.position_name') }}</label>
-                            <input type="text" class="form-control" id="search_name" name="search_name"
+                            <input type="text" class="form-control form-control-xs" id="search_name" name="search_name"
                                 value="{{ request('search_name') }}">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="search_description">{{ __('position.description') }}</label>
-                            <input type="text" class="form-control" id="search_description" name="search_description"
+                            <input type="text" class="form-control form-control-xs" id="search_description" name="search_description"
                                 value="{{ request('search_description') }}">
                         </div>
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary btn-sm">
                             <i class="fa fa-search"></i> Search
                         </button>
-                        <button type="button" class="btn btn-secondary" onclick="clearSearch()">
+                        <button type="button" class="btn btn-secondary btn-sm" onclick="clearSearch()">
                             <i class="fa fa-times"></i> Clear
                         </button>
                     </div>

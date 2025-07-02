@@ -8,9 +8,9 @@ use App\Http\Controllers\PositionController;
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 
 // change language
@@ -19,10 +19,15 @@ Route::get('lang', function () {
     dd(config('app.locale'));
 });
 
-
+Route::get('/', [HomeController::class,'index'])->name('index');
 Route::prefix('danhmuc')->group(function () {
+    
 
-    Route::prefix('shipper')->controller(ShipperController::class)->group(function () {
+    
+    
+
+    Route::prefix('shipper')->controller(ShipperController::class)
+        ->group(function () {
         Route::get('/', 'index')->name('shipper.index');
         Route::get('/create', 'create')->name('shipper.create');
         Route::post('/store', 'store')->name('shipper.store');

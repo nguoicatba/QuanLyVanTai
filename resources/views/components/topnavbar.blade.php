@@ -34,11 +34,10 @@
                     <a class="dropdown-item" href={{ route('employee.index') }}>Employee</a>
                     <a class="dropdown-item" href={{ route('position.index') }}>Position</a>
 
-                    <a class="dropdown-item" href="dashboard_v3.html">Dashboard v3</a>
                 </div>
             </li>
-            <li class="nav-item"><a class="nav-link" href="widgets.html">Widgets</a>
-            </li>
+            <!-- <li class="nav-item"><a class="nav-link" href="widgets.html">Widgets</a>
+            </li> -->
         </ul>
         <!-- END Left navbar-->
         <!-- START Right Navbar-->
