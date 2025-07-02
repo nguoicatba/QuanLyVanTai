@@ -1,8 +1,7 @@
-## Some Package required
-### Setup Authentication với Laravel Breeze
+## Quick Start
+### Install Dependencies
 ```bash
-composer require laravel/breeze --dev
-php artisan breeze:install
+composer install
 ```
 
 
