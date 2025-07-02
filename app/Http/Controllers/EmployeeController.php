@@ -67,6 +67,15 @@ class EmployeeController extends Controller
     public function update(UpdateEmployeeRequest $request, Employee $employee)
     {
         //
+        $data = $request->only([
+            'employee_name',
+            'position_id',
+            'phone',
+            'address',
+            'email',
+        ]);
+        $employee->update($data);
+        return redirect()->route('employee.index')->with('success', __('Employee updated successfully.'));
     }
 
     /**
@@ -75,5 +84,8 @@ class EmployeeController extends Controller
     public function destroy(Employee $employee)
     {
         //
+        $employee->delete();
+        return redirect()->route('employee.index')->with('success', __('Employee deleted successfully.'));
+
     }
 }
