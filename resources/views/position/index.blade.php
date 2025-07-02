@@ -1,4 +1,4 @@
-@extends('main')
+@extends('components.layout')
 
 @section('content')
     <div class="card card-default">
@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <div class="form-group">
-                            <label for="search_code">{{ __('position.position_code') }}</label>
+                            <label for="search_code">{{ __('position.position_id') }}</label>
                             <input type="text" class="form-control" id="search_code" name="search_code"
                                 value="{{ request('search_code') }}">
                         </div>
@@ -55,7 +55,7 @@
                 <thead>
                     <tr>
                         <th>Action</th>
-                        <th>{{ __('position.position_code') }}</th>
+                        <th>{{ __('position.position_id') }}</th>
                         <th>{{ __('position.position_name') }}</th>
                         <th>{{ __('position.description') }}</th>
                     </tr>
@@ -74,7 +74,7 @@
                                         onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></button>
                                 </form>
                             </td>
-                            <td>{{ $position->position_code }}</td>
+                            <td>{{ $position->position_id }}</td>
                             <td>{{ $position->position_name }}</td>
                             <td>{{ $position->description }}</td>
                         </tr>

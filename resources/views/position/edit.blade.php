@@ -1,4 +1,4 @@
-@extends('main')
+@extends('components.layout')
 
 @section('content')
     <div class="card card-default">

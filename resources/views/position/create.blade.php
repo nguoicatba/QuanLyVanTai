@@ -1,4 +1,4 @@
-@extends('main')
+@extends('components.layout')
 
 @section('content')
     <div class="card card-default">
@@ -9,8 +9,8 @@
             <form action="{{ route('position.store') }}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="position_code">{{ __('position.position_code') }}</label>
-                    <input type="text" class="form-control" id="position_code" name="position_code" required>
+                    <label for="position_id">{{ __('position.position_id') }}</label>
+                    <input type="text" class="form-control" id="position_id" name="position_id" required>
                 </div>
                 <div class="form-group">
                     <label for="position_name">{{ __('position.position_name') }}</label>
