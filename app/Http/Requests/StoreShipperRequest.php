@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Helpers\PrimaryKeyGenerator;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreShipperRequest extends FormRequest
@@ -37,7 +38,7 @@ class StoreShipperRequest extends FormRequest
             'debt_balance' => ['nullable', 'numeric'],
         ];
     }
-    
+
     /**
      * Get custom messages for validator errors.
      *
@@ -72,5 +73,15 @@ class StoreShipperRequest extends FormRequest
             'tax_percent.integer' => 'The tax percent must be an integer.',
             'debt_balance.numeric' => 'The debt balance must be a number.',
         ];
+    }
+    /**
+     * Prepare the data for validation.
+     */
+    protected function prepareForValidation()
+    {
+
+        $this->merge([
+            'shipper_code' => PrimaryKeyGenerator::generate('shippers', 'shipper_code', 'SH', 5),
+        ]);
     }
 }

@@ -8,11 +8,8 @@
         <div class="card-body">
             <form action="{{ route('shipper.store') }}" method="POST">
                 @csrf
-                <!-- <div class="form-group">
-                            <label for="shipper_code">{{ __('shipper.shipper_code') }}</label>
-                            <input type="text" class="form-control" id="shipper_code" name="shipper_code" required>
-                        </div> -->
                 <div class="form-group">
+                    <input type="hidden" class="form-control" id="shipper_code" name="shipper_code" value="0">
                     <label for="shipper_name">{{ __('shipper.shipper_name') }}</label>
                     <input type="text" class="form-control" id="shipper_name" name="shipper_name" required>
                 </div>

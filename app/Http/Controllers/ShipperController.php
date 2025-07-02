@@ -53,6 +53,8 @@ class ShipperController extends Controller
      */
     public function store(StoreShipperRequest $request)
     {
+
+
         $data = $request->validated();
         Shipper::create($data);
         return redirect()->route('shipper.index')->with('success', __('Shipper created successfully.'));
