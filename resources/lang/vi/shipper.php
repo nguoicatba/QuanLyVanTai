@@ -1,18 +1,19 @@
 <?php
 
 return [
-    'shipper_code' => 'Mã Shipper',
-    'shipper_name' => 'Tên Shipper',
+
+    'shipper_code' => 'Mã chủ hàng',
+    'shipper_name' => 'Tên chủ hàng',
     'address' => 'Địa chỉ',
-    'phone' => 'Số điện thoại',
-    'fax' => 'Số fax',
+    'phone' => 'Điện thoại',
+    'fax' => 'Số FAX',
     'tax_code' => 'Mã số thuế',
-    'storage_fee' => 'Phí lưu kho',
-    'bank_account' => 'Tài khoản ngân hàng',
-    'bank_name' => 'Tên ngân hàng',
+    'storage_fee' => 'Đơn giá lưu ca',
+    'bank_account' => 'Số tài khoản',
+    'bank_name' => 'Ngân hàng',
     'bank_address' => 'Địa chỉ ngân hàng',
-    'id_number' => 'Số CMND/CCCD',
+    'id_number' => 'Số CMND',
     'tax_percent' => 'Phần trăm thuế',
-    'debt_balance' => 'Số dư công nợ',
+    'debt_balance' => 'Nợ cũ',
     // Thêm các trường khác nếu cần
 ]; 

@@ -20,8 +20,8 @@
                     <label for="description">{{ __('position.description') }}</label>
                     <input type="text" class="form-control" id="description" name="description">
                 </div>
-                <button type="submit" class="btn btn-success">Save</button>
-                <a href="{{ route('position.index') }}" class="btn btn-secondary">Cancel</a>
+                <button type="submit" class="btn btn-success">{{ __('button.save') }}</button>
+                <a href="{{ route('position.index') }}" class="btn btn-secondary">{{ __('button.cancel') }}</a>
             </form>
         </div>
     </div>

@@ -22,18 +22,18 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="search_description">{{ __('position.description') }}</label>
-                            <input type="text" class="form-control form-control-xs" id="search_description" name="search_description"
-                                value="{{ request('search_description') }}">
+                            <input type="text" class="form-control form-control-xs" id="search_description"
+                                name="search_description" value="{{ request('search_description') }}">
                         </div>
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-12">
                         <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-search"></i> Search
+                            <i class="fa fa-search"></i> {{ __('general.search') }}
                         </button>
                         <button type="button" class="btn btn-secondary btn-sm" onclick="clearSearch()">
-                            <i class="fa fa-times"></i> Clear
+                            <i class="fa fa-times"></i> {{ __('general.reset') }}
                         </button>
                     </div>
                 </div>
