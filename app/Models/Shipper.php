@@ -2,9 +2,15 @@
 
 namespace App\Models;
 
+use App\Builders\ShipperBuilder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
+// phpdocs, custom query builder
+/**
+ * @property string $shipper_code
+ * @property string $shipper_name
+ * @method static ShipperBuilder query()()
+ */
 class Shipper extends Model
 {
     use HasFactory;
@@ -28,4 +34,9 @@ class Shipper extends Model
         'tax_percent',
         'debt_balance',
     ];
+
+    public function newEloquentBuilder($query)
+    {
+        return new ShipperBuilder($query);
+    }
 }

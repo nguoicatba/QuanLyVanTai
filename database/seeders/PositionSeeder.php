@@ -27,7 +27,11 @@ class PositionSeeder extends Seeder
             'IT Support',
         ];
         foreach ($positions as $name) {
-            Position::create([
+//            Position::create([
+//                'position_name' => $name,
+//            ]);
+            // Model::query()
+            Position::query()->create([
                 'position_name' => $name,
             ]);
         }
