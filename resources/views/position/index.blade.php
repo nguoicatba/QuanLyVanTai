@@ -29,11 +29,17 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-sm">
-                            <i class="fa fa-search"></i> {{ __('general.search') }}
+                        <button type="submit" class="btn btn-labeled btn-primary btn-xs">
+                            <span class="btn-label">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            {{ __('general.search') }}
                         </button>
-                        <button type="button" class="btn btn-secondary btn-sm" onclick="clearSearch()">
-                            <i class="fa fa-times"></i> {{ __('general.reset') }}
+                        <button type="button" class="btn btn-labeled btn-secondary btn-xs" onclick="clearSearch()">
+                            <span class="btn-label">
+                                <i class="fa fa-times"></i>
+                            </span>
+                            {{ __('general.reset') }}
                         </button>
                     </div>
                 </div>

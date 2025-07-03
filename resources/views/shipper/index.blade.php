@@ -43,11 +43,17 @@
                 </div>
                 <div class="row mt-1">
                     <div class="col-12">
-                        <button type="submit" class="btn btn-primary btn-sm m-1">
-                            <i class="fa fa-search"></i> Search
+                        <button type="submit" class="btn btn-labeled btn-primary btn-xs m-1">
+                            <span class="btn-label">
+                                <i class="fa fa-search"></i>
+                            </span>
+                            {{ __('Search') }}
                         </button>
-                        <button type="button" class="btn btn-secondary btn-sm m-1" onclick="clearSearch()">
-                            <i class="fa fa-times"></i> Clear
+                        <button type="button" class="btn btn-labeled btn-secondary btn-xs m-1" onclick="clearSearch()">
+                            <span class="btn-label">
+                                <i class="fa fa-times"></i>
+                            </span>
+                            {{ __('Cancel') }}
                         </button>
                     </div>
                 </div>
