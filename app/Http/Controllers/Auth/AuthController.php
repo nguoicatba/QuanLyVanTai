@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 
 
 class AuthController extends Controller
@@ -22,7 +24,7 @@ class AuthController extends Controller
 
         if (Auth::attempt($credentials)) {
             // Authentication passed...
-            return redirect()->intended('home');
+            return redirect()->route('home.index')->with('success', 'Welcome back, ' . Auth::user()->name . '!');
         }
 
         return back()->withErrors([
@@ -36,9 +38,26 @@ class AuthController extends Controller
         return redirect()->route('login');
     }
 
-    public function Register()
+    public function RegisterForm()
     {
-        // Logic for registration
+
         return view('auth.register');
+    }
+
+    public function Register(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string|max:255|unique:users,name',
+            'password' => 'required|string|min:6|confirmed',
+        ]);
+
+        $user = User::create([
+            'name' => $request->input('name'),
+            'password' => bcrypt($request->input('password')),
+        ]);
+
+        Auth::login($user);
+
+        return redirect()->intended('home');
     }
 }

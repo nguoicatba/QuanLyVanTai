@@ -21,11 +21,18 @@ Route::get('lang', function () {
     dd(config('app.locale'));
 })->middleware(LocaleMiddleware::class);
 
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
+
+
+
+
 // Authentication routes
 Route::get('/login', [AuthController::class, 'ShowLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'Login'])->name('login.post');
+Route::get('/register', [AuthController::class, 'RegisterForm'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.post');
+Route::get('/logout', [AuthController::class, 'Logout'])->name('logout');
 
-Route::get('/', [HomeController::class, 'index'])->name('index');
 
 
 Route::middleware([LocaleMiddleware::class])->group(function () {

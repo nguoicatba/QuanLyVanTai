@@ -30,7 +30,7 @@
                 </div>
                 <div class="card-body">
                     <p class="text-center py-2">SIGN IN TO CONTINUE.</p>
-                    <form class="mb-3" id="loginForm" novalidate method="POST" action="{{ route('login') }}">
+                    <form class="mb-3" id="loginForm" method="POST" action="{{ route('login') }}">
                         @csrf
                         <div class="form-group">
                             <div class="input-group with-focus">
@@ -58,14 +58,14 @@
                                     <input type="checkbox" value="" name="remember">
                                     <span class="fa fa-check"></span>Remember Me</label>
                             </div>
-                            <div class="float-right"><a class="text-muted" href={{asset("recover.html")}}>Forgot your
+                            <div class="float-right"><a class="text-muted">Forgot your
                                     password?</a>
                             </div>
                         </div>
                         <button class="btn btn-block btn-primary mt-3" type="submit">Login</button>
                     </form>
                     <p class="pt-3 text-center">Need to Signup?</p><a class="btn btn-block btn-secondary"
-                        href={{asset("register.html")}}>Register Now</a>
+                        href={{route("register")}}>Register Now</a>
                 </div>
             </div>
             <!-- END card-->

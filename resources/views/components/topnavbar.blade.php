@@ -164,6 +164,12 @@
                 <!-- END Dropdown menu-->
             </li>
             <!-- END Alert menu-->
+
+            <li class="nav-item">
+                <a class="nav-link" href={{ route('logout') }}>
+                    <em class="icon-logout"></em>
+                </a>
+            </li>
             <!-- START Offsidebar button-->
             <li class="nav-item">
                 <a class="nav-link" href="#" data-toggle-state="offsidebar-open" data-no-persist="true">
