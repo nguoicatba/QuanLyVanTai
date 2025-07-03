@@ -18,13 +18,14 @@
     <div class="navbar-collapse collapse" id="topnavbar">
         <!-- START Left navbar-->
         <ul class="nav navbar-nav mr-auto flex-column flex-lg-row">
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#dashboard"
-                    data-toggle="dropdown">Dashboard</a>
-                <!-- <div class="dropdown-menu animated fadeIn"><a class="dropdown-item"
-                                    href="dashboard.html">Dashboard v1</a><a class="dropdown-item"
-                                    href="dashboard_v2.html">Dashboard v2</a><a class="dropdown-item"
-                                    href="dashboard_v3.html">Dashboard v3</a>
-                            </div> -->
+            <!-- <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-toggle-nocaret"
+                    href="{{ route('home.index') }}" data-toggle="dropdown">Dashboard</a>
+                <div class="dropdown-menu animated fadeIn"><a class="dropdown-item" href="dashboard.html">Dashboard
+                        v1</a><a class="dropdown-item" href="dashboard_v2.html">Dashboard v2</a><a class="dropdown-item"
+                        href="dashboard_v3.html">Dashboard v3</a>
+                </div>
+            </li> -->
+            <li class="nav-item"><a class="nav-link" href="{{ route('home.index') }}">Dashboard</a>
             </li>
             <li class="nav-item dropdown"><a class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#dashboard"
                     data-toggle="dropdown">Danh mục</a>
