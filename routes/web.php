@@ -41,7 +41,7 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
         Route::prefix('shipper')->controller(ShipperController::class)
             ->group(function () {
                 // uu tien dung resource
-                Route::resource('/', ShipperController::class);
+                Route::resource('shipper', ShipperController::class);
                 Route::get('/export', 'export')->name('shipper.export');
             });
 

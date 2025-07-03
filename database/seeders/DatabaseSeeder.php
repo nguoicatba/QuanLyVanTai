@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ShipperSeeder::class,
             PositionSeeder::class,
             EmployeeSeeder::class,
+            RoutesSeeder::class,
         ]);
     }
 }
