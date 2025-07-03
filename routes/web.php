@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\Auth\AuthController;
+use App\Http\Controllers\ItemTypeController;
 
 use App\Http\Middleware\LocaleMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -63,6 +64,15 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
             Route::delete('/delete/{position}', 'destroy')->name('position.destroy');
 
 
+        });
+
+        Route::prefix('itemtype')->controller(ItemTypeController::class)->group(function () {
+            Route::get('/', 'index')->name('itemtype.index');
+            Route::get('/create', 'create')->name('itemtype.create');
+            Route::post('/store', 'store')->name('itemtype.store');
+            Route::get('/edit/{itemtype}', 'edit')->name('itemtype.edit');
+            Route::put('/update/{itemtype}', 'update')->name('itemtype.update');
+            Route::delete('/delete/{itemtype}', 'destroy')->name('itemtype.destroy');
         });
 
     });
