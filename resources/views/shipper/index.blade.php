@@ -3,8 +3,8 @@
 @section('content')
     <div class="card card-default">
         <!-- <div class="card-header">
-                        <div class="card-title">{{ __('Search Shipper') }}</div>
-                    </div> -->
+                                <div class="card-title">{{ __('Search Shipper') }}</div>
+                            </div> -->
         <div class="card-body">
             <form action="{{ route('shipper.index') }}" method="GET" id="searchForm">
                 <div class="row">
@@ -63,6 +63,12 @@
                         <i class="fa fa-plus-circle"></i>
                     </span>
                     New Shipper
+                </a>
+                <a href="{{ route('shipper.export') }}" class="btn btn-labeled btn-success btn-xs">
+                    <span class="btn-label">
+                        <i class="fa fa-file-excel-o"></i>
+                    </span>
+                    Export
                 </a>
             </p>
             <table class="table nowrap border display" id="mytable" style="width:100%">

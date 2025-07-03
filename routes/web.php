@@ -46,6 +46,7 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
                 Route::get('/edit/{shipper}', 'edit')->name('shipper.edit');
                 Route::put('/update/{shipper}', 'update')->name('shipper.update');
                 Route::delete('/delete/{shipper}', 'destroy')->name('shipper.destroy');
+                Route::get('/export', 'export')->name('shipper.export');
             });
 
         Route::prefix('employee')->controller(EmployeeController::class)->group(function () {

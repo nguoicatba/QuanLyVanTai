@@ -7,6 +7,8 @@ use App\Http\Requests\StoreShipperRequest;
 use App\Http\Requests\UpdateShipperRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Exports\ShipperExport;
 
 class ShipperController extends Controller
 {
@@ -95,5 +97,10 @@ class ShipperController extends Controller
     {
         $shipper->delete();
         return redirect()->route('shipper.index')->with('success', __('Shipper deleted successfully.'));
+    }
+
+    public function export()
+    {
+        return Excel::download(new ShipperExport, 'shippers.xlsx');
     }
 }
