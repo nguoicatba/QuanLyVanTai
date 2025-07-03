@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Shipper;
 use App\Http\Requests\StoreShipperRequest;
 use App\Http\Requests\UpdateShipperRequest;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 
@@ -15,26 +16,14 @@ class ShipperController extends Controller
      */
     public function index(Request $request)
     {
+        // phpdocs
+        /** @var Collection<int, Shipper> $shippers */
+        $shippers = Shipper::query()->standardQuery()->get();
 
-        $query = Shipper::query();
-
-        if ($request->filled('search_code')) {
-            $query->where('shipper_code', 'like', '%' . $request->search_code . '%');
-        }
-
-        if ($request->filled('search_name')) {
-            $query->where('shipper_name', 'like', '%' . $request->search_name . '%');
-        }
-
-        if ($request->filled('search_phone')) {
-            $query->where('phone', 'like', '%' . $request->search_phone . '%');
-        }
-
-        if ($request->filled('search_tax_code')) {
-            $query->where('tax_code', 'like', '%' . $request->search_tax_code . '%');
-        }
-
-        $shippers = $query->get();
+//        foreach ($shippers as $shipper) {
+////            dd($shipper->shipper_name);
+//            dd($shipper->shipper_code);
+//        }
 
         return view('shipper.index', [
             'table' => $shippers

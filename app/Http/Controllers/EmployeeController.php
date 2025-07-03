@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Employee;
 use App\Http\Requests\StoreEmployeeRequest;
 use App\Http\Requests\UpdateEmployeeRequest;
+use Illuminate\Support\Facades\Gate;
 
 class EmployeeController extends Controller
 {
@@ -41,7 +42,8 @@ class EmployeeController extends Controller
             'address',
             'email',
         ]);
-        Employee::create($data);
+//        Gate::authorize('create', Employee::class);
+        Employee::query()->create($data);
         return redirect()->route('employee.index')->with('success', __('Employee created successfully.'));
     }
 
