@@ -10,7 +10,8 @@ class HomeController extends Controller
 {
     //
 
-    public function index(){
+    public function index()
+    {
         return view("home.index");
     }
 
@@ -22,8 +23,7 @@ class HomeController extends Controller
         }
 
         Session::put('locale', $locale);
-        App::setLocale($locale);
-        Config::set('app.locale', $locale);
+
 
         return Redirect::back();
     }

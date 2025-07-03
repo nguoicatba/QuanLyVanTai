@@ -6,6 +6,7 @@ use App\Models\Shipper;
 use App\Http\Requests\StoreShipperRequest;
 use App\Http\Requests\UpdateShipperRequest;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class ShipperController extends Controller
 {
@@ -14,6 +15,7 @@ class ShipperController extends Controller
      */
     public function index(Request $request)
     {
+
         $query = Shipper::query();
 
         if ($request->filled('search_code')) {
