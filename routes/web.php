@@ -5,6 +5,7 @@ use App\Http\Controllers\ShipperController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\PositionController;
+use App\Http\Controllers\Auth\AuthController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -19,22 +20,22 @@ Route::get('lang', function () {
     dd(config('app.locale'));
 });
 
-Route::get('/', [HomeController::class,'index'])->name('index');
-Route::prefix('danhmuc')->group(function () {
-    
+// Authentication routes
+Route::get('/login', [AuthController::class, 'ShowLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'Login'])->name('login.post');
 
-    
-    
+Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::prefix('danhmuc')->group(function () {
 
     Route::prefix('shipper')->controller(ShipperController::class)
         ->group(function () {
-        Route::get('/', 'index')->name('shipper.index');
-        Route::get('/create', 'create')->name('shipper.create');
-        Route::post('/store', 'store')->name('shipper.store');
-        Route::get('/edit/{shipper}', 'edit')->name('shipper.edit');
-        Route::put('/update/{shipper}', 'update')->name('shipper.update');
-        Route::delete('/delete/{shipper}', 'destroy')->name('shipper.destroy');
-    });
+            Route::get('/', 'index')->name('shipper.index');
+            Route::get('/create', 'create')->name('shipper.create');
+            Route::post('/store', 'store')->name('shipper.store');
+            Route::get('/edit/{shipper}', 'edit')->name('shipper.edit');
+            Route::put('/update/{shipper}', 'update')->name('shipper.update');
+            Route::delete('/delete/{shipper}', 'destroy')->name('shipper.destroy');
+        });
 
     Route::prefix('employee')->controller(EmployeeController::class)->group(function () {
         Route::get('/', 'index')->name('employee.index');
