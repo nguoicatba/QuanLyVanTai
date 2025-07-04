@@ -15,13 +15,13 @@
                     </ul>
                 </div>
             @endif
-            <form action="{{ route('position.update', $position->position_code) }}" method="POST">
+            <form action="{{ route('position.update', $position->position_id) }}" method="POST">
                 @csrf
                 @method('PUT')
                 <div class="form-group">
                     <label for="position_id">{{ __('position.position_id') }}</label>
                     <input type="text" class="form-control @error('position_id') is-invalid @enderror" id="position_id"
-                        name="position_id" value="{{ old('position_code', $position->position_code) }}" readonly>
+                        name="position_id" value="{{ old('position_id', $position->position_id) }}" readonly>
                     @error('position_id')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror

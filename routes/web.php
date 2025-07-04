@@ -56,27 +56,9 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
             Route::delete('/delete/{employee}', 'destroy')->name('employee.destroy');
         });
 
-        Route::prefix('position')->controller(PositionController::class)->group(function () {
-            Route::get('/', 'index')->name('position.index');
-            Route::get('/create', 'create')->name('position.create');
-            Route::post('/store', 'store')->name('position.store');
-            Route::get('/edit/{position}', 'edit')->name('position.edit');
-            Route::put('/update/{position}', 'update')->name('position.update');
-            Route::delete('/delete/{position}', 'destroy')->name('position.destroy');
+        Route::resource('position', PositionController::class);
 
-
-        });
-
-        // Route::prefix('itemtype')->controller(ItemTypeController::class)->group(function () {
-        //     Route::get('/', 'index')->name('itemtype.index');
-        //     Route::get('/create', 'create')->name('itemtype.create');
-        //     Route::post('/store', 'store')->name('itemtype.store');
-        //     Route::get('/edit/{itemtype}', 'edit')->name('itemtype.edit');
-        //     Route::put('/update/{itemtype}', 'update')->name('itemtype.update');
-        //     Route::delete('/delete/{itemtype}', 'destroy')->name('itemtype.destroy');
-        // });
-
-        Route::resource('itemtype',ItemTypeController::class);
+        Route::resource('itemtype', ItemTypeController::class);
 
         Route::resource('currency', CurrencyController::class);
 

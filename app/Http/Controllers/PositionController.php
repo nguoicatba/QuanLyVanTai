@@ -53,6 +53,7 @@ class PositionController extends Controller
     public function edit(Position $position)
     {
         //
+        return view('position.edit', compact('position'));
     }
 
     /**

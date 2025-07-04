@@ -10,12 +10,22 @@ class PositionTest extends TestCase
 {
     use RefreshDatabase;
 
+    /**
+     * A test for index positions.
+     */
     public function test_index_displays_positions()
     {
-        Position::factory()->count(3)->create();
-        $response = $this->get(route('position.index'));
-        $response->assertStatus(200);
-        $response->assertSeeText('Position');
+        $position = Position::factory()->count(3)->create();
+        $response = $this->get(route('position.index', [
+            'table' => $position
+        ]));
+        $response->assertOk()
+            ->assertViewIs('position.index')
+            ->assertViewHas('table', $position)
+            ->assertSeeText($position[0]->position_name) // nhìn thấy tên position
+            ->assertSeeText($position[1]->position_name)
+            ->assertSeeText($position[2]->position_name);
+
     }
 
     public function test_create_displays_form()

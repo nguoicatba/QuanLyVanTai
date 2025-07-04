@@ -18,6 +18,7 @@ class PositionFactory extends Factory
     {
         return [
             //
+            'position_name' => $this->faker->unique()->word(),
         ];
     }
 }
