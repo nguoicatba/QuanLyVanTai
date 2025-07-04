@@ -1,0 +1,5 @@
+sáng:
+tạo model curruncy
+tạo model đơn giá dầu
+chiều:
+xử lý test
