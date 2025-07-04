@@ -3,7 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-
+use App\Helpers\PrimaryKeyGenerator;
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Shipper>
  */
@@ -17,7 +17,7 @@ class ShipperFactory extends Factory
     public function definition(): array
     {
         return [
-            'shipper_code' => $this->faker->unique()->bothify('SH##??'),
+            'shipper_code' => PrimaryKeyGenerator::generate('shippers', 'shipper_code', 'SH', 5),
             'shipper_name' => $this->faker->company,
             'address' => $this->faker->address,
             'phone' => $this->faker->phoneNumber,

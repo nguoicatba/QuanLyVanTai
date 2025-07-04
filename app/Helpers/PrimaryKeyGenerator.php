@@ -16,20 +16,20 @@ class PrimaryKeyGenerator
      * @return string Mã mới
      */
     public static function generate(string $table, string $column, string $prefix, int $length = 5): string
-    {
+    {return DB::transaction(function () use ($table, $column, $prefix, $length) {
+        // Khóa tất cả hàng có cùng prefix để ngăn request khác đọc trong lúc này
         $latest = DB::table($table)
             ->where($column, 'like', $prefix . '%')
+            ->lockForUpdate()
             ->orderByDesc($column)
             ->value($column);
 
-        if ($latest && Str::startsWith($latest, $prefix)) {
-            $lastNumber = (int) str_replace($prefix, '', $latest);
-            $nextNumber = $lastNumber + 1;
-        } else {
-            $nextNumber = 1;
-        }
+        $nextNumber = $latest
+            ? (int) Str::after($latest, $prefix) + 1
+            : 1;
 
         return $prefix . str_pad($nextNumber, $length, '0', STR_PAD_LEFT);
+    }, attempts: 3);   //
     }
 }
 

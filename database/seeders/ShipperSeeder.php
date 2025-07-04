@@ -14,7 +14,9 @@ class ShipperSeeder extends Seeder
     public function run(): void
     {
         //
-
-        Shipper::factory()->count(10)->create();
+      for ($i = 0; $i < 10; $i++) {
+        Shipper::factory()->count(1)->create();
+      }
+    
     }
 }
