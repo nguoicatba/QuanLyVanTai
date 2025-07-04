@@ -4,7 +4,6 @@ namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-
 // Laravel's faker does not have a native ulid() method in all versions.
 // Use Str::ulid() if available, otherwise fallback to uniqid() or a random string.
 // We'll alias Str here for use in the factory.
@@ -26,7 +25,7 @@ class RoutesFactory extends Factory
     public function definition(): array
     {
         return [
-            'id'                     => $this->faker->unique()->ulid(),
+            'id'                     => $this->faker->unique()->uuid(),
             'route_name'              => $this->faker->streetName(),
             'distance_km'             => $this->faker->numberBetween(10, 500),
             'diesel_start_equalizer'  => $this->faker->boolean ? $this->faker->numberBetween(1, 10) : null,

@@ -14,6 +14,10 @@ class CurrencyController extends Controller
     public function index()
     {
         //
+        $currencies = Currency::all();
+        return view("currency.index",[
+            'table' => $currencies
+        ]);
     }
 
     /**
@@ -22,6 +26,7 @@ class CurrencyController extends Controller
     public function create()
     {
         //
+        return view('currency.create');
     }
 
     /**
@@ -29,7 +34,9 @@ class CurrencyController extends Controller
      */
     public function store(StoreCurrencyRequest $request)
     {
-        //
+        $data = $request->validated();
+        Currency::create($data);
+        return redirect()->route('currency.index')->with('success', __('currency.created_success'));
     }
 
     /**
@@ -53,7 +60,9 @@ class CurrencyController extends Controller
      */
     public function update(UpdateCurrencyRequest $request, Currency $currency)
     {
-        //
+        $data = $request->validated();
+        $currency->update($data);
+        return redirect()->route('currency.index')->with('success', __('currency.updated_success'));
     }
 
     /**

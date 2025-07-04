@@ -11,7 +11,7 @@ class UpdateCurrencyRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,8 +21,11 @@ class UpdateCurrencyRequest extends FormRequest
      */
     public function rules(): array
     {
+        $code = $this->route('currency')->code ?? null;
         return [
-            //
+            'code' => ['required', 'string', 'max:10', 'unique:currencies,code,' . $code . ',code'],
+            'name' => ['required', 'string', 'max:50'],
+            'symbol' => ['nullable', 'string', 'max:10'],
         ];
     }
 }

@@ -11,7 +11,7 @@ return new class extends Migration {
     public function up(): void
     {
         Schema::create('routes', function (Blueprint $table) {
-            $table->ulid('id')->primary(); // Dùng ULID thay vì auto increment
+            $table->string('id',40)->primary(); // Dùng ULID thay vì auto increment
             $table->string('route_name', 255);
             $table->integer('distance_km')->nullable();
             $table->integer('diesel_start_equalizer')->nullable();
