@@ -22,8 +22,7 @@ class PositionRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
-            ""=> "",
+            "position_name" => ['required', 'string', 'max:50', 'unique:positions,position_name'],
         ];
     }
 }
