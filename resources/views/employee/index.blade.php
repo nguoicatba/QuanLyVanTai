@@ -70,10 +70,16 @@
                         <th>Action</th>
                         <th>{{ __('employee.employee_id') }}</th>
                         <th>{{ __('employee.employee_name') }}</th>
-                        <th>{{ __('employee.position_id') }}</th>
-                        <th>{{ __('employee.phone') }}</th>
+                        <th>Birth Date</th>
+                        <th>Citizen ID</th>
                         <th>{{ __('employee.address') }}</th>
-                        <th>{{ __('employee.email') }}</th>
+                        <th>Phone Number</th>
+                        <th>Employee Type</th>
+                        <th>Department</th>
+                        <th>Basic Salary</th>
+                        <th>Note</th>
+                        <th>{{ __('employee.position_id') }}</th>
+                        <th>Resigned</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -92,10 +98,16 @@
                             </td>
                             <td>{{ $employee->employee_id }}</td>
                             <td>{{ $employee->employee_name }}</td>
-                            <td>{{ $employee->position_id }}</td>
-                            <td>{{ $employee->phone }}</td>
+                            <td>{{ $employee->birth_date }}</td>
+                            <td>{{ $employee->citizen_id }}</td>
                             <td>{{ $employee->address }}</td>
-                            <td>{{ $employee->email }}</td>
+                            <td>{{ $employee->phone_number }}</td>
+                            <td>{{ $employee->employee_type }}</td>
+                            <td>{{ $employee->department }}</td>
+                            <td>{{ $employee->basic_salary }}</td>
+                            <td>{{ $employee->note }}</td>
+                            <td>{{ $employee->position_id }}</td>
+                            <td>{{ $employee->resigned ? 'Yes' : 'No' }}</td>
                         </tr>
                     @endforeach
                 </tbody>

@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\ItemType;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreItemTypeRequest;
 use App\Http\Requests\UpdateItemTypeRequest;
+use App\Http\Controllers\Controller;
 
 class ItemTypeController extends Controller
 {

@@ -25,7 +25,7 @@ class StoreEmployeeRequest extends FormRequest
             //
             'employee_id' => ['required', 'string', 'max:20', 'unique:employees,employee_id'],
             'employee_name' => ['required', 'string', 'max:255'],
-            'citizen_id' => ['required', 'digits:12', 'unique:employees,citizen_id'],
+            // 'citizen_id' => ['required', 'digits:12', 'unique:employees,citizen_id'],
 
 
         ];

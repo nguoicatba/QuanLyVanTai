@@ -14,24 +14,48 @@
                     <input type="text" class="form-control" id="employee_name" name="employee_name" required>
                 </div>
                 <div class="form-group">
-                    <label for="position_id">{{ __('employee.position_id') }}</label>
-                    <select class="form-control select2-position" id="position_id" name="position_id"
-                        data-url="{{ route('api.position.get') }}" required>
-                        <option value="">Select Position</option>
-                    </select>
-
+                    <label for="birth_date">{{ __('employee.birth_date') }}</label>
+                    <input type="date" class="form-control" id="birth_date" name="birth_date">
                 </div>
                 <div class="form-group">
-                    <label for="phone">{{ __('employee.phone') }}</label>
-                    <input type="text" class="form-control" id="phone" name="phone">
+                    <label for="citizen_id">{{ __('employee.citizen_id') }}</label>
+                    <input type="text" class="form-control" id="citizen_id" name="citizen_id">
                 </div>
                 <div class="form-group">
                     <label for="address">{{ __('employee.address') }}</label>
                     <input type="text" class="form-control" id="address" name="address">
                 </div>
                 <div class="form-group">
-                    <label for="email">{{ __('employee.email') }}</label>
-                    <input type="email" class="form-control" id="email" name="email">
+                    <label for="phone_number">{{ __('employee.phone_number') }}</label>
+                    <input type="text" class="form-control" id="phone_number" name="phone_number">
+                </div>
+                <div class="form-group">
+                    <label for="employee_type">{{ __('employee.employee_type') }}</label>
+                    <input type="text" class="form-control" id="employee_type" name="employee_type">
+                </div>
+                <div class="form-group">
+                    <label for="department">{{ __('employee.department') }}</label>
+                    <input type="text" class="form-control" id="department" name="department">
+                </div>
+                <div class="form-group">
+                    <label for="basic_salary">{{ __('employee.basic_salary') }}</label>
+                    <input type="number" step="0.01" class="form-control" id="basic_salary" name="basic_salary">
+                </div>
+                <div class="form-group">
+                    <label for="note">{{ __('employee.note') }}</label>
+                    <input type="text" class="form-control" id="note" name="note">
+                </div>
+                <div class="form-group">
+                    <label for="position_id">{{ __('employee.position_id') }}</label>
+                    <select class="form-control select2-position" id="position_id" name="position_id"
+                        data-url="{{ route('api.position.get') }}" required>
+
+                    </select>
+
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="resigned" name="resigned" value="1">
+                    <label class="form-check-label" for="resigned">{{ __('employee.resigned') }}</label>
                 </div>
                 <button type="submit" class="btn btn-success">Save</button>
                 <a href="{{ route('employee.index') }}" class="btn btn-secondary">Cancel</a>

@@ -35,18 +35,18 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="position_id">{{ __('employee.position_id') }}</label>
-                    <input type="number" class="form-control @error('position_id') is-invalid @enderror" id="position_id"
-                        name="position_id" value="{{ old('position_id', $employee->position_id) }}" required>
-                    @error('position_id')
+                    <label for="birth_date">{{ __('employee.birth_date') }}</label>
+                    <input type="date" class="form-control @error('birth_date') is-invalid @enderror" id="birth_date"
+                        name="birth_date" value="{{ old('birth_date', $employee->birth_date) }}">
+                    @error('birth_date')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="phone">{{ __('employee.phone') }}</label>
-                    <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone" name="phone"
-                        value="{{ old('phone', $employee->phone) }}">
-                    @error('phone')
+                    <label for="citizen_id">{{ __('employee.citizen_id') }}</label>
+                    <input type="text" class="form-control @error('citizen_id') is-invalid @enderror" id="citizen_id"
+                        name="citizen_id" value="{{ old('citizen_id', $employee->citizen_id) }}">
+                    @error('citizen_id')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
                 </div>
@@ -59,12 +59,56 @@
                     @enderror
                 </div>
                 <div class="form-group">
-                    <label for="email">{{ __('employee.email') }}</label>
-                    <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
-                        value="{{ old('email', $employee->email) }}">
-                    @error('email')
+                    <label for="phone_number">{{ __('employee.phone_number') }}</label>
+                    <input type="text" class="form-control @error('phone_number') is-invalid @enderror" id="phone_number"
+                        name="phone_number" value="{{ old('phone_number', $employee->phone_number) }}">
+                    @error('phone_number')
                         <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
+                </div>
+                <div class="form-group">
+                    <label for="employee_type">{{ __('employee.employee_type') }}</label>
+                    <input type="text" class="form-control @error('employee_type') is-invalid @enderror" id="employee_type"
+                        name="employee_type" value="{{ old('employee_type', $employee->employee_type) }}">
+                    @error('employee_type')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="department">{{ __('employee.department') }}</label>
+                    <input type="text" class="form-control @error('department') is-invalid @enderror" id="department"
+                        name="department" value="{{ old('department', $employee->department) }}">
+                    @error('department')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="basic_salary">{{ __('employee.basic_salary') }}</label>
+                    <input type="number" step="0.01" class="form-control @error('basic_salary') is-invalid @enderror" id="basic_salary"
+                        name="basic_salary" value="{{ old('basic_salary', $employee->basic_salary) }}">
+                    @error('basic_salary')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="note">{{ __('employee.note') }}</label>
+                    <input type="text" class="form-control @error('note') is-invalid @enderror" id="note"
+                        name="note" value="{{ old('note', $employee->note) }}">
+                    @error('note')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="position_id">{{ __('employee.position_id') }}</label>
+                    <input type="number" class="form-control @error('position_id') is-invalid @enderror" id="position_id"
+                        name="position_id" value="{{ old('position_id', $employee->position_id) }}" required>
+                    @error('position_id')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group form-check">
+                    <input type="checkbox" class="form-check-input" id="resigned" name="resigned" value="1" {{ old('resigned', $employee->resigned) ? 'checked' : '' }}>
+                    <label class="form-check-label" for="resigned">{{ __('employee.resigned') }}</label>
                 </div>
                 <button type="submit" class="btn btn-primary">{{ __('Update') }}</button>
                 <a href="{{ route('employee.index') }}" class="btn btn-secondary">{{ __('Cancel') }}</a>

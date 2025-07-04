@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Port;
-use App\Http\Requests\StorePortRequest;
-use App\Http\Requests\UpdatePortRequest;
+use App\Models\OilPrice;
+use App\Http\Requests\StoreOilPriceRequest;
+use App\Http\Requests\UpdateOilPriceRequest;
+use App\Http\Controllers\Controller;
 
-class PortController extends Controller
+class OilPriceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class PortController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePortRequest $request)
+    public function store(StoreOilPriceRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class PortController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Port $port)
+    public function show(OilPrice $oilPrice)
     {
         //
     }
@@ -43,7 +44,7 @@ class PortController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Port $port)
+    public function edit(OilPrice $oilPrice)
     {
         //
     }
@@ -51,7 +52,7 @@ class PortController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePortRequest $request, Port $port)
+    public function update(UpdateOilPriceRequest $request, OilPrice $oilPrice)
     {
         //
     }
@@ -59,7 +60,7 @@ class PortController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Port $port)
+    public function destroy(OilPrice $oilPrice)
     {
         //
     }

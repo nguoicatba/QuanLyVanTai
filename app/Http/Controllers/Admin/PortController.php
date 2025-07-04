@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Routes;
-use App\Http\Requests\StoreRoutesRequest;
-use App\Http\Requests\UpdateRoutesRequest;
+use App\Models\Port;
+use App\Http\Requests\StorePortRequest;
+use App\Http\Requests\UpdatePortRequest;
+use App\Http\Controllers\Controller;
 
-class RoutesController extends Controller
+class PortController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class RoutesController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreRoutesRequest $request)
+    public function store(StorePortRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class RoutesController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Routes $routes)
+    public function show(Port $port)
     {
         //
     }
@@ -43,7 +44,7 @@ class RoutesController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Routes $routes)
+    public function edit(Port $port)
     {
         //
     }
@@ -51,7 +52,7 @@ class RoutesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateRoutesRequest $request, Routes $routes)
+    public function update(UpdatePortRequest $request, Port $port)
     {
         //
     }
@@ -59,7 +60,7 @@ class RoutesController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Routes $routes)
+    public function destroy(Port $port)
     {
         //
     }

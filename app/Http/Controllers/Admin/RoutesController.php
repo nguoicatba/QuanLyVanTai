@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\OilPrice;
-use App\Http\Requests\StoreOilPriceRequest;
-use App\Http\Requests\UpdateOilPriceRequest;
+use App\Models\Routes;
+use App\Http\Requests\StoreRoutesRequest;
+use App\Http\Requests\UpdateRoutesRequest;
+use App\Http\Controllers\Controller;
 
-class OilPriceController extends Controller
+class RoutesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +28,7 @@ class OilPriceController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreOilPriceRequest $request)
+    public function store(StoreRoutesRequest $request)
     {
         //
     }
@@ -35,7 +36,7 @@ class OilPriceController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(OilPrice $oilPrice)
+    public function show(Routes $routes)
     {
         //
     }
@@ -43,7 +44,7 @@ class OilPriceController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(OilPrice $oilPrice)
+    public function edit(Routes $routes)
     {
         //
     }
@@ -51,7 +52,7 @@ class OilPriceController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateOilPriceRequest $request, OilPrice $oilPrice)
+    public function update(UpdateRoutesRequest $request, Routes $routes)
     {
         //
     }
@@ -59,7 +60,7 @@ class OilPriceController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(OilPrice $oilPrice)
+    public function destroy(Routes $routes)
     {
         //
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Shipper;
 use App\Http\Requests\StoreShipperRequest;
@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Exports\ShipperExport;
+use App\Http\Controllers\Controller;
 
 class ShipperController extends Controller
 {

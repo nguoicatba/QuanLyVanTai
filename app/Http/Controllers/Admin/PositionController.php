@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Position;
-use App\Http\Requests\StorePositionRequest;
-use App\Http\Requests\UpdatePositionRequest;
+
+use App\Http\Requests\PositionRequest;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
+use App\Http\Controllers\Controller;
 
 class PositionController extends Controller
 {
@@ -34,9 +35,13 @@ class PositionController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePositionRequest $request)
+    public function store(PositionRequest $request)
     {
         //
+        dd($request->all());
+        $data = $request->validated();
+        Position::create($data);
+        return redirect()->route('position.index')->with('success','');
     }
 
     /**
@@ -59,7 +64,7 @@ class PositionController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdatePositionRequest $request, Position $position)
+    public function update(PositionRequest $request, Position $position)
     {
         //
     }

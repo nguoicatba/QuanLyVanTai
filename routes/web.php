@@ -1,13 +1,13 @@
 <?php
 
-use App\Http\Controllers\HangVanTaiController;
-use App\Http\Controllers\ShipperController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\EmployeeController;
-use App\Http\Controllers\PositionController;
+
+use App\Http\Controllers\Admin\ShipperController;
+use App\Http\Controllers\Admin\HomeController;
+use App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Auth\AuthController;
-use App\Http\Controllers\ItemTypeController;
-use App\Http\Controllers\CurrencyController;
+use App\Http\Controllers\Admin\ItemTypeController;
+use App\Http\Controllers\Admin\CurrencyController;
 
 use App\Http\Middleware\LocaleMiddleware;
 use Illuminate\Support\Facades\Route;
