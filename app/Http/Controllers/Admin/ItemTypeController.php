@@ -3,9 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\ItemType;
-use Illuminate\Http\Request;
-use App\Http\Requests\StoreItemTypeRequest;
-use App\Http\Requests\UpdateItemTypeRequest;
+use App\Http\Requests\ItemTypeRequest;
 use App\Http\Controllers\Controller;
 
 class ItemTypeController extends Controller
@@ -30,7 +28,7 @@ class ItemTypeController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreItemTypeRequest $request)
+    public function store(ItemTypeRequest $request)
     {
         $data = $request->validated();
         ItemType::create($data);
@@ -56,7 +54,7 @@ class ItemTypeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateItemTypeRequest $request, ItemType $itemtype)
+    public function update(ItemTypeRequest $request, ItemType $itemtype)
     {
         $data = $request->validated();
         $itemtype->update($data);

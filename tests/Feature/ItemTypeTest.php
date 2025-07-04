@@ -12,16 +12,6 @@ class ItemTypeTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * A basic feature test example.
-     */
-    public function test_example(): void
-    {
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-
-    /**
      * A test for index item types.
      */
     public function test_index_displays_itemtypes()
