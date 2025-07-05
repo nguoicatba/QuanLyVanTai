@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\PositionController;
 use App\Http\Controllers\Auth\AuthController;
 use App\Http\Controllers\Admin\ItemTypeController;
 use App\Http\Controllers\Admin\CurrencyController;
+use App\Http\Controllers\Admin\PortController;
 
 use App\Http\Middleware\LocaleMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -61,6 +62,8 @@ Route::middleware([LocaleMiddleware::class])->group(function () {
         Route::resource('itemtype', ItemTypeController::class);
 
         Route::resource('currency', CurrencyController::class);
+
+        Route::resource('port', PortController::class);
 
     });
 

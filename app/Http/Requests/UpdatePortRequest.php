@@ -11,7 +11,7 @@ class UpdatePortRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,9 @@ class UpdatePortRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'code' => ['required', 'string', 'max:20'],
+            'name' => ['required', 'string', 'max:40'],
+            'note' => ['nullable', 'string', 'max:255'],
         ];
     }
 }

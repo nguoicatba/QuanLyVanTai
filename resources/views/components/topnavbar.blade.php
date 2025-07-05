@@ -36,7 +36,7 @@
                     <a class="dropdown-item" href={{ route('position.index') }}>Position</a>
                     <a class="dropdown-item" href={{ route('itemtype.index') }}>{{ __('itemtype.title') }}</a>
                     <a class="dropdown-item" href={{ route('currency.index') }}>{{ __('currency.title') }}</a>
-
+                    <a class="dropdown-item" href={{ route('port.index') }}>{{ __('port.list') }}</a>
 
                 </div>
             </li>

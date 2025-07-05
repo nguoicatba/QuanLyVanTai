@@ -14,7 +14,10 @@ class PortController extends Controller
      */
     public function index()
     {
-        //
+        $ports = Port::all();
+        return view('port.index', [
+            'table' => $ports
+        ]);
     }
 
     /**
@@ -22,7 +25,7 @@ class PortController extends Controller
      */
     public function create()
     {
-        //
+        return view('port.create');
     }
 
     /**
@@ -30,7 +33,9 @@ class PortController extends Controller
      */
     public function store(StorePortRequest $request)
     {
-        //
+        $data = $request->only(['code', 'name', 'note']);
+        Port::create($data);
+        return redirect()->route('port.index')->with('success', __('Port created successfully.'));
     }
 
     /**
@@ -46,7 +51,7 @@ class PortController extends Controller
      */
     public function edit(Port $port)
     {
-        //
+        return view('port.edit', compact('port'));
     }
 
     /**
@@ -54,7 +59,9 @@ class PortController extends Controller
      */
     public function update(UpdatePortRequest $request, Port $port)
     {
-        //
+        $data = $request->only(['code', 'name', 'note']);
+        $port->update($data);
+        return redirect()->route('port.index')->with('success', __('Port updated successfully.'));
     }
 
     /**
@@ -62,6 +69,7 @@ class PortController extends Controller
      */
     public function destroy(Port $port)
     {
-        //
+        $port->delete();
+        return redirect()->route('port.index')->with('success', __('Port deleted successfully.'));
     }
 }
