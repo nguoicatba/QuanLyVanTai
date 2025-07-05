@@ -449,6 +449,7 @@
     <script src={{ asset("vendor/select2/dist/js/select2.full.js")}}></script>
     <!-- SPARKLINE-->
     <script src="{{ asset('vendor/jquery-sparkline/jquery.sparkline.js') }}"></script>
+
     <!-- FLOT CHART-->
     <script src="{{ asset('vendor/flot/jquery.flot.js') }}"></script>
     <script src="{{ asset('vendor/jquery.flot.tooltip/js/jquery.flot.tooltip.js') }}"></script>
